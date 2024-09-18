@@ -1,30 +1,85 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900"
     />
 
     <title>SevaSaarthi</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .completed {
+        background-color: green !important;
+        color: white !important;
+      }
+      .full-screen-video {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Add this line */
+}
+
+.video-container {
+  background-color: transparent; /* Add this line */
+}
+
+.video-container img {
+  width: 50vw;
+  height: auto;
+  opacity: 100%;
+  background-color: transparent;
+}
+    </style>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+      style='font-family: Epilogue, "Noto Sans", sans-serif;'
+      id="main-content"
+    >
+      <!-- Back button and Title -->
       <div class="flex items-center bg-slate-50 p-4 pb-2 justify-between">
-        <div class="text-[#0e171b] flex size-12 shrink-0 items-center" data-icon="ArrowLeft" data-size="24px" data-weight="regular">
+        <div
+          class="text-[#0e171b] flex size-12 shrink-0 items-center"
+          data-icon="ArrowLeft"
+          data-size="24px"
+          data-weight="regular"
+        >
           <a href="./home.html">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-          </svg>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24px"
+              height="24px"
+              fill="currentColor"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"
+              ></path>
+            </svg>
+          </a>
         </div>
       </div>
-      <h2 class="text-[#0e171b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Book a Doctor</h2>
+
+      <!-- Title -->
+      <h2
+        class="text-[#0e171b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5"
+      >
+        Book a Doctor
+      </h2>
+
+      <!-- Input fields -->
       <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
         <label class="flex flex-col min-w-40 flex-1">
           <input
@@ -34,6 +89,7 @@
           />
         </label>
       </div>
+
       <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
         <label class="flex flex-col min-w-40 flex-1">
           <input
@@ -43,84 +99,148 @@
           />
         </label>
       </div>
-      <h3 class="text-[#0e171b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Available Doctors</h3>
+
+      <!-- Doctor Listings -->
+      <h3
+        class="text-[#0e171b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+      >
+        Available Doctors
+      </h3>
+
+      <!-- Doctor 1 -->
       <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
         <div class="flex flex-col justify-center">
-          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">Dr Abhijit Sen  </p>
-          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">Orthopaedics</p>
+          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">
+            Dr Abhijit Sen
+          </p>
+          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">
+            Orthopaedics
+          </p>
         </div>
         <div class="shrink-0">
           <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
+            class="date-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
           >
             <span class="truncate">12:00 PM, October 14</span>
           </button>
         </div>
       </div>
-       <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
+
+      <!-- Doctor 2 -->
+      <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
         <div class="flex flex-col justify-center">
-          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">Dr. Adit Roy </p>
-          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">Cardiology</p>
+          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">
+            Dr. Adit Roy
+          </p>
+          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">
+            Cardiology
+          </p>
         </div>
         <div class="shrink-0">
           <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
+            class="date-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
           >
             <span class="truncate">1:30 PM, October 15</span>
           </button>
         </div>
       </div>
+
+      <!-- Doctor 3 -->
       <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
         <div class="flex flex-col justify-center">
-          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">Dr. S. K. Chakrabory </p>
-          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">Gastroenterology</p>
+          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">
+            Dr. S. K. Chakrabory
+          </p>
+          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">
+            Gastroenterology
+          </p>
         </div>
         <div class="shrink-0">
           <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
+            class="date-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
           >
             <span class="truncate">3:00 PM, October 16</span>
           </button>
         </div>
       </div>
+
+      <!-- Doctor 4 -->
       <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
         <div class="flex flex-col justify-center">
-          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">Dr. B. K Sen</p>
-          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">Dental Care</p>
+          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">
+            Dr. B. K. Sen
+          </p>
+          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">
+            Dental Care
+          </p>
         </div>
         <div class="shrink-0">
           <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
+            class="date-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
           >
             <span class="truncate">3:00 PM, September 27</span>
           </button>
         </div>
       </div>
+
+      <!-- Doctor 5 -->
       <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2 justify-between">
         <div class="flex flex-col justify-center">
-          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">Dr. Imtiaz Kamal</p>
-          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">Urology</p>
+          <p class="text-[#0e171b] text-base font-medium leading-normal line-clamp-1">
+            Dr. Imtiaz Kamal
+          </p>
+          <p class="text-[#4e7f97] text-sm font-normal leading-normal line-clamp-2">
+            Urology
+          </p>
         </div>
         <div class="shrink-0">
           <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
+            class="date-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#e7eff3] text-[#0e171b] text-sm font-medium leading-normal w-fit"
           >
             <span class="truncate">3:00 PM, October 18</span>
           </button>
         </div>
       </div>
-      <div class="flex justify-stretch">
-        <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
-          <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-[#0e171b]">
-            <span class="truncate">Filter</span>
-          </button>
-          <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e7eff3] text-[#0e171b]">
-            <span class="truncate">Sort</span>
-          </button>
-        </div>
-        
-      </div>
+
+      <!-- Empty space at the end -->
       <div class="h-5 bg-slate-50"></div>
     </div>
+
+    <!-- Fullscreen video overlay -->
+    <div class="full-screen-video" id="video-overlay">
+      <div class="video-container">
+        <img src="./thikmark-unscreen.gif" alt="">
+      </div>
+    </div>
+
+    <!-- JavaScript to handle button click events and video playback -->
+    <script>
+      // Get all the buttons with class 'date-button'
+      const buttons = document.querySelectorAll('.date-button');
+      const videoOverlay = document.getElementById('video-overlay');
+      const mainContent = document.getElementById('main-content');
+      const video = document.getElementById('play-video');
+
+      // Add event listener to each button
+      buttons.forEach((button) => {
+        button.addEventListener('click', function () {
+          // Change button text to 'Completed' and button style to green
+          button.textContent = 'Completed';
+          button.classList.add('completed');
+
+          // Show the video overlay
+          videoOverlay.style.display = 'flex';
+
+          // Hide the main content
+          mainContent.style.display = 'flex';
+
+          // Play the video for 3 seconds, then hide the overlay and show the main content
+          setTimeout(function () {
+            videoOverlay.style.display = 'none';
+            mainContent.style.display = 'flex';
+          }, 1500);
+        });
+      });
+    </script>
   </body>
 </html>
